@@ -14,7 +14,7 @@ const PDFFile = ({ name, guest, signatureUrl }: { name: string; guest: string; s
     {guest && <p className="text-base self-start">{guest}</p>}
     <div className="mt-6 space-y-2">
       {[...checklistItems1, ...checklistItems2].map(item =>
-        <p key={item} className="text-sm">{item.replace(/\*\*/gi, "")}</p>
+        <p key={item} className="text-sm text-justify">{item.replace(/\*\*/gi, "")}</p>
       )}
     </div>
     <img className="mt-8" src={signatureUrl} alt="" />

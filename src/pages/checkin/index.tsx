@@ -102,7 +102,7 @@ export default function Home() {
       </Head>
       <link rel="preload" as="image" href="./pool.jpg" />
       <link rel="preload" as="image" href="./beach.jpg" />
-      <link rel="preload" as="video" type="video/mp4" href="https://firebasestorage.googleapis.com/v0/b/camurim-11e85.appspot.com/o/videos%2Fvideo.mp4?alt=media&token=bd67a9fa-c127-40d8-83c1-a2b12c567060" />
+      <link rel="preload" as="video" type="video/mp4" href="https://utfs.io/f/84148856-54b4-40f1-ad4d-70c53f27651b-1uswaj.mp4" />
       <main className="scroll-auto flex min-h-screen flex-col items-center justify-between bg-blue pt-4 pb-4">
         {step === 1 &&
           <>
@@ -148,7 +148,7 @@ export default function Home() {
           step === 2 &&
           <>
             <video autoPlay muted loop className="full-screen-video" preload="auto">
-              <source src="https://firebasestorage.googleapis.com/v0/b/camurim-11e85.appspot.com/o/videos%2Fvideo.mp4?alt=media&token=bd67a9fa-c127-40d8-83c1-a2b12c567060" type="video/mp4" />
+              <source src="https://utfs.io/f/84148856-54b4-40f1-ad4d-70c53f27651b-1uswaj.mp4" type="video/mp4" />
             </video>
             <div className="relative z-10 pt-10">
               <img src="./logo.svg" alt="Camurim Logo" className="mx-auto" />
@@ -318,7 +318,7 @@ export default function Home() {
       </main>
       <div className="hidden">
         <video autoPlay muted loop className="full-screen-video" preload="auto">
-          <source src="https://firebasestorage.googleapis.com/v0/b/camurim-11e85.appspot.com/o/videos%2Fvideo.mp4?alt=media&token=bd67a9fa-c127-40d8-83c1-a2b12c567060" type="video/mp4" />
+          <source src="https://utfs.io/f/84148856-54b4-40f1-ad4d-70c53f27651b-1uswaj.mp4" type="video/mp4" />
         </video>
       </div>
     </>
