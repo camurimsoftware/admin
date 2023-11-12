@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    --webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: #fff;
+}
+
+
+* {
+    @apply font-montserrat;
+}
+
+h1 {
+    @apply font-quick;
+}
+
+.bg-blue {
+    background-image: url('/bg-blue.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-white {
+    background-image: url('/bg-white.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.full-screen-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.sigCanvas {
+    background-color: #fff;
+    border-radius: 16px;
+}
+
+@layer base {
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
