@@ -2,8 +2,6 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import Logo from "../../public/logo.svg";
-
 import { api } from "~/utils/api";
 import ReactToPrint from "react-to-print";
 import { useRef, useState } from "react";
@@ -19,8 +17,8 @@ const PDFFile = ({ name, guest, signatureUrl }: { name: string; guest: string; s
         <p key={item} className="text-sm">{item.replace(/\*\*/gi, "")}</p>
       )}
     </div>
-    <img className="mt-8" src={signatureUrl} />
-    <img src="./logo-dark.svg" className="w-[234px] mt-auto" />
+    <img className="mt-8" src={signatureUrl} alt="" />
+    <img src="./logo-dark.svg" className="w-[234px] mt-auto" alt="" />
   </div>
 }
 
@@ -108,7 +106,7 @@ export default function Home() {
         </div>
         {searchValue && <TableResult document={searchValue} />}
         <div className="mt-10">
-          <img src="./logo-dark.svg" className="w-[400px]" />
+          <img src="./logo-dark.svg" className="w-[400px]" alt="Logo" />
         </div>
       </main>
     </>

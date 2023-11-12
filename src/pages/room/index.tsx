@@ -44,7 +44,7 @@ export default function Home() {
                             </button>
                         </div>
                         <div>
-                            <img src="./logo-dark.svg" />
+                            <img src="./logo-dark.svg" alt="" />
                         </div>
                     </>
                 }
@@ -61,7 +61,7 @@ export default function Home() {
                             <p className="text-white text-2xl text-center">
                                 à tranquilidade e ao charme da nossa pousada. Estamos aqui para tornar seus dias inesquecíveis.
                             </p>
-                            <img src="./logo.svg" className="mt-40 mx-auto" />
+                            <img src="./logo.svg" className="mt-40 mx-auto" alt="Logo" />
                         </div>
                     </>
                 }
