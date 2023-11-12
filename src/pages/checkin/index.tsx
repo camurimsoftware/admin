@@ -71,7 +71,7 @@ export default function Home() {
     const formData = new FormData(event.currentTarget)
     formDataRef.current = {
       document: formData.get("document") as string,
-      referenceNumber: Number(formData.get("reference") as string),
+      referenceNumber: Number(formData.get("referenceNumber") as string),
       name: formData.get("name") as string,
       guest: formData.get("guest") as string,
       roomNumber: Number(formData.get("roomNumber") as string),
@@ -292,11 +292,11 @@ export default function Home() {
               const base64Img = signPadRef?.current?.toDataURL() as string;
               if (base64Img) {
                 void handleUpload(base64Img);
+                setStep(6);
+                setTimeout(() => {
+                  router.push("/")
+                }, 10000)
               }
-              setStep(6);
-              setTimeout(() => {
-                router.push("/")
-              }, 10000)
             }} className="py-2 px-16 bg-primary text-white text-xl rounded-xl my-5">
               {(isLoading || loading) ? (
                 <FaSpinner className="ml-2 h-6 w-6 animate-spin text-white" />
