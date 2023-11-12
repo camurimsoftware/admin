@@ -30,6 +30,7 @@ const config = {
         checksVoidReturn: { attributes: false },
       },
     ],
+    "@next/next/no-img-element": "off",
   },
 };
 

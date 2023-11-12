@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect, useRef, type FormEvent } from "react";
@@ -79,7 +82,7 @@ export default function Home() {
     setStep(2);
   }
 
-  const signPadRef = useRef<HTMLElement>(null);
+  const signPadRef = useRef<SignatureCanvas>(null);
 
   useEffect(() => {
     if (step !== 1 && window?.document) {
@@ -286,7 +289,10 @@ export default function Home() {
               />
             </div>
             <button disabled={(isLoading || loading)} onClick={() => {
-              handleUpload(signPadRef?.current?.toDataURL())
+              const base64Img = signPadRef?.current?.toDataURL() as string;
+              if (base64Img) {
+                void handleUpload(base64Img);
+              }
               setStep(6);
               setTimeout(() => {
                 router.push("/")
