@@ -316,6 +316,11 @@ export default function Home() {
           </Link>
         }
       </main>
+      <div className="hidden">
+        <video autoPlay muted loop className="full-screen-video" preload="auto">
+          <source src="https://firebasestorage.googleapis.com/v0/b/camurim-11e85.appspot.com/o/videos%2Fvideo.mp4?alt=media&token=bd67a9fa-c127-40d8-83c1-a2b12c567060" type="video/mp4" />
+        </video>
+      </div>
     </>
   );
 }
