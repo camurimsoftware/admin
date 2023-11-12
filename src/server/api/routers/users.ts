@@ -17,15 +17,23 @@ export const usersRouter = createTRPCRouter({
         }))
         .mutation(async ({ ctx, input }) => {
             await ctx.db.insert(users).values({
+                document: input.document,
                 name: input.name,
                 guest: input.guest,
-                document: input.document,
                 referenceNumber: input.referenceNumber,
                 roomNumber: input.roomNumber,
                 signatureUrl: input.signatureUrl,
                 startDate: input.startDate,
                 endDate: input.endDate,
-            })
+            }).onDuplicateKeyUpdate({ set: { 
+                name: input.name,
+                guest: input.guest,
+                referenceNumber: input.referenceNumber,
+                roomNumber: input.roomNumber,
+                signatureUrl: input.signatureUrl,
+                startDate: input.startDate,
+                endDate: input.endDate,
+            }});
         }),
     getUser: publicProcedure.input(z.object({
         document: z.string().min(11),

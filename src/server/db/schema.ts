@@ -24,7 +24,7 @@ export const users = mysqlTable(
     id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
     name: varchar("name", { length: 256 }),
     guest: varchar("guest", { length: 256 }),
-    document: varchar("document", { length: 256 }),
+    document: varchar("document", { length: 256 }).unique(),
     referenceNumber: bigint("reference_number", { mode: "number" }),
     roomNumber: bigint("room_number", { mode: "number" }),
     startDate: timestamp("start_date", { mode: "string"}),
