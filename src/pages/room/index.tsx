@@ -54,14 +54,18 @@ export default function Home() {
                         <video autoPlay muted loop className="full-screen-video" preload="auto">
                             <source src="https://utfs.io/f/07bb6811-a23a-41fd-8652-c37462f3fca4-di88vd.mp4" type="video/mp4" />
                         </video>
-                        <div className="flex flex-col h-screen items-center justify-center relative z-10">
-                            <h1 className="font-quick text-6xl text-white mb-2 text-center">
-                                {`Bem-vindos ${data?.name?.toUpperCase()}${data?.guest ? ` e ${data?.guest?.toUpperCase()}` : ""}`}
+                        <div className="w-full flex items-center justify-center relative z-10 bg-black/30 gap-9 mt-auto px-9 py-5">
+                            <h1 className="font-quick text-4xl text-white mb-2 text-center flex flex-col items-center justify-center shrink-0">
+                                {/* {`Bem-vindos ${data?.name?.toUpperCase()}${data?.guest ? ` e ${data?.guest?.toUpperCase()}` : ""}`} */}
+                                Bem-vindos!
+                                <span>
+                                {`${data?.name?.toUpperCase()}${data?.guest ? ` e ${data?.guest?.toUpperCase()}` : ""}`}
+                                </span>
                             </h1>
-                            <p className="text-white text-2xl text-center">
+                            <p className="text-white text-2xl text-center ">
                                 à tranquilidade e ao charme da nossa pousada. Estamos aqui para tornar seus dias inesquecíveis.
                             </p>
-                            <img src="./logo.svg" className="mt-40 mx-auto" alt="Logo" />
+                            {/* <img src="./logo.svg" className="mt-40 mx-auto" alt="Logo" /> */}
                         </div>
                     </>
                 }
