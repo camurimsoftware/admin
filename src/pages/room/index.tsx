@@ -63,7 +63,9 @@ export default function Home() {
                                 </span>
                             </h1>
                             <p className="text-white text-2xl text-center ">
-                                à tranquilidade e ao charme da nossa pousada. Estamos aqui para tornar seus dias inesquecíveis.
+                                à tranquilidade e ao charme da nossa pousada. 
+                                <br/>
+                                Estamos aqui para tornar seus dias inesquecíveis.
                             </p>
                             {/* <img src="./logo.svg" className="mt-40 mx-auto" alt="Logo" /> */}
                         </div>
