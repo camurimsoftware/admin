@@ -1,14 +1,11 @@
-// Example model schema from the Drizzle docs
-// https://orm.drizzle.team/docs/sql-schema-declaration
-
 import { sql } from "drizzle-orm";
 import {
   bigint,
   index,
-  mysqlTableCreator,
+  pgTableCreator,
   timestamp,
   varchar,
-} from "drizzle-orm/mysql-core";
+} from "drizzle-orm/pg-core";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -16,25 +13,24 @@ import {
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const mysqlTable = mysqlTableCreator((name) => `camurim_${name}`);
+export const pgTable = pgTableCreator((name) => `camurim_${name}`);
 
-export const users = mysqlTable(
+export const users = pgTable(
   "user",
   {
-    id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
+    id: bigint("id", { mode: "number" }).primaryKey().generatedByDefaultAsIdentity(),
     name: varchar("name", { length: 256 }),
     guest: varchar("guest", { length: 256 }),
     document: varchar("document", { length: 256 }).unique(),
     referenceNumber: bigint("reference_number", { mode: "number" }),
     roomNumber: bigint("room_number", { mode: "number" }),
-    startDate: timestamp("start_date", { mode: "string"}),
-    endDate: timestamp("end_date", { mode: "string"}),
+    startDate: timestamp("start_date", { mode: "string" }),
+    endDate: timestamp("end_date", { mode: "string" }),
     signatureUrl: varchar("signature_url", { length: 256 }),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`),
-    updatedAt: timestamp("updatedAt").onUpdateNow(),
+    updatedAt: timestamp("updated_at").$onUpdate(
+      () => new Date()
+    ),
   },
-  (example) => ({
-    documentIndex: index("document_idx").on(example.document),
-  })
 );

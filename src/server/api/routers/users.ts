@@ -25,15 +25,7 @@ export const usersRouter = createTRPCRouter({
                 signatureUrl: input.signatureUrl,
                 startDate: input.startDate,
                 endDate: input.endDate,
-            }).onDuplicateKeyUpdate({ set: { 
-                name: input.name,
-                guest: input.guest,
-                referenceNumber: input.referenceNumber,
-                roomNumber: input.roomNumber,
-                signatureUrl: input.signatureUrl,
-                startDate: input.startDate,
-                endDate: input.endDate,
-            }});
+            })
         }),
     getUser: publicProcedure.input(z.object({
         document: z.string().min(11),

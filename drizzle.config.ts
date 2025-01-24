@@ -1,12 +1,13 @@
-import { type Config } from "drizzle-kit";
+import { config } from 'dotenv';
+import { defineConfig } from "drizzle-kit";
 
-import { env } from "~/env.mjs";
+config({ path: '.env' });
 
-export default {
+export default defineConfig({
   schema: "./src/server/db/schema.ts",
-  driver: "mysql2",
+  out: "./migrations",
+  dialect: "postgresql",
   dbCredentials: {
-    connectionString: env.DATABASE_URL,
+    url: process.env.DATABASE_URL!,
   },
-  tablesFilter: ["camurim_*"],
-} satisfies Config;
+});
